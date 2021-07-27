@@ -1,0 +1,228 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CDKToolkit": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://549822723257/us-east-2",
+      "properties": {
+        "templateFile": "CDKToolkit.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::549822723257:role/cdk-hnb659fds-deploy-role-549822723257-us-east-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::549822723257:role/cdk-hnb659fds-cfn-exec-role-549822723257-us-east-2"
+      },
+      "metadata": {
+        "/CDKToolkit/CDKToolkit": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKToolkit"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/FileAssetsBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FileAssetsBucketName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/FileAssetsBucketKmsKeyId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FileAssetsBucketKmsKeyId"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/ContainerAssetsRepositoryName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerAssetsRepositoryName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/Qualifier": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Qualifier"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/PublicAccessBlockConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PublicAccessBlockConfiguration"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/HasTrustedAccounts": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasTrustedAccounts"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/HasTrustedAccountsForLookup": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasTrustedAccountsForLookup"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/HasCloudFormationExecutionPolicies": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasCloudFormationExecutionPolicies"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/HasCustomFileAssetsBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasCustomFileAssetsBucketName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/CreateNewKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateNewKey"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/UseAwsManagedKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UseAwsManagedKey"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/HasCustomContainerAssetsRepositoryName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasCustomContainerAssetsRepositoryName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Conditions/UsePublicAccessBlockConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UsePublicAccessBlockConfiguration"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/FilePublishingRole": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FilePublishingRole"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/FileAssetsBucketEncryptionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FileAssetsBucketEncryptionKey"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/FileAssetsBucketEncryptionKeyAlias": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FileAssetsBucketEncryptionKeyAlias"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/StagingBucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StagingBucket"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/StagingBucketPolicy": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StagingBucketPolicy"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/ContainerAssetsRepository": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerAssetsRepository"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/ImagePublishingRole": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImagePublishingRole"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/LookupRole": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LookupRole"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/FilePublishingRoleDefaultPolicy": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FilePublishingRoleDefaultPolicy"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/ImagePublishingRoleDefaultPolicy": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImagePublishingRoleDefaultPolicy"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/CloudFormationExecutionRole": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CloudFormationExecutionRole"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/CdkBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkBootstrapVersion"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/DeploymentActionRole": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentActionRole"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Ouputs/BucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Ouputs/BucketDomainName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketDomainName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Ouputs/FileAssetKeyArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FileAssetKeyArn"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Ouputs/ImageRepositoryName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImageRepositoryName"
+          }
+        ],
+        "/CDKToolkit/CDKToolkit/$Ouputs/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CDKToolkit/SomeOtherRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SomeOtherRole18AB99B3"
+          }
+        ],
+        "/CDKToolkit/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ]
+      },
+      "displayName": "CDKToolkit"
+    }
+  }
+}

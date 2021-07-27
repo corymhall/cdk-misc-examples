@@ -1,0 +1,1219 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.0.5"
+        }
+      },
+      "CDKToolkit": {
+        "id": "CDKToolkit",
+        "path": "CDKToolkit",
+        "children": {
+          "CDKToolkit": {
+            "id": "CDKToolkit",
+            "path": "CDKToolkit/CDKToolkit",
+            "children": {
+              "$Mappings": {
+                "id": "$Mappings",
+                "path": "CDKToolkit/CDKToolkit/$Mappings",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "FileAssetsBucketName": {
+                "id": "FileAssetsBucketName",
+                "path": "CDKToolkit/CDKToolkit/FileAssetsBucketName",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "FileAssetsBucketKmsKeyId": {
+                "id": "FileAssetsBucketKmsKeyId",
+                "path": "CDKToolkit/CDKToolkit/FileAssetsBucketKmsKeyId",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "ContainerAssetsRepositoryName": {
+                "id": "ContainerAssetsRepositoryName",
+                "path": "CDKToolkit/CDKToolkit/ContainerAssetsRepositoryName",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "Qualifier": {
+                "id": "Qualifier",
+                "path": "CDKToolkit/CDKToolkit/Qualifier",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "PublicAccessBlockConfiguration": {
+                "id": "PublicAccessBlockConfiguration",
+                "path": "CDKToolkit/CDKToolkit/PublicAccessBlockConfiguration",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "$Conditions": {
+                "id": "$Conditions",
+                "path": "CDKToolkit/CDKToolkit/$Conditions",
+                "children": {
+                  "HasTrustedAccounts": {
+                    "id": "HasTrustedAccounts",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/HasTrustedAccounts",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "HasTrustedAccountsForLookup": {
+                    "id": "HasTrustedAccountsForLookup",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/HasTrustedAccountsForLookup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "HasCloudFormationExecutionPolicies": {
+                    "id": "HasCloudFormationExecutionPolicies",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/HasCloudFormationExecutionPolicies",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "HasCustomFileAssetsBucketName": {
+                    "id": "HasCustomFileAssetsBucketName",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/HasCustomFileAssetsBucketName",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "CreateNewKey": {
+                    "id": "CreateNewKey",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/CreateNewKey",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "UseAwsManagedKey": {
+                    "id": "UseAwsManagedKey",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/UseAwsManagedKey",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "HasCustomContainerAssetsRepositoryName": {
+                    "id": "HasCustomContainerAssetsRepositoryName",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/HasCustomContainerAssetsRepositoryName",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "UsePublicAccessBlockConfiguration": {
+                    "id": "UsePublicAccessBlockConfiguration",
+                    "path": "CDKToolkit/CDKToolkit/$Conditions/UsePublicAccessBlockConfiguration",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.0.0-rc.14"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "$Rules": {
+                "id": "$Rules",
+                "path": "CDKToolkit/CDKToolkit/$Rules",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "FilePublishingRole": {
+                "id": "FilePublishingRole",
+                "path": "CDKToolkit/CDKToolkit/FilePublishingRole",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::111111111111:root"
+                                  ]
+                                ]
+                              },
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::",
+                                    {
+                                      "Fn::Sub": "${AWS::AccountId}"
+                                    },
+                                    ":root"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::222222222222:root"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "roleName": {
+                      "Fn::Sub": "cdk-${Qualifier}-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+                    },
+                    "tags": [
+                      {
+                        "key": "aws-cdk:bootstrap-role",
+                        "value": "file-publishing"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "FileAssetsBucketEncryptionKey": {
+                "id": "FileAssetsBucketEncryptionKey",
+                "path": "CDKToolkit/CDKToolkit/FileAssetsBucketEncryptionKey",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::KMS::Key",
+                  "aws:cdk:cloudformation:props": {
+                    "keyPolicy": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "kms:Create*",
+                            "kms:Describe*",
+                            "kms:Enable*",
+                            "kms:List*",
+                            "kms:Put*",
+                            "kms:Update*",
+                            "kms:Revoke*",
+                            "kms:Disable*",
+                            "kms:Get*",
+                            "kms:Delete*",
+                            "kms:ScheduleKeyDeletion",
+                            "kms:CancelKeyDeletion",
+                            "kms:GenerateDataKey"
+                          ],
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Ref": "AWS::AccountId"
+                            }
+                          },
+                          "Resource": "*"
+                        },
+                        {
+                          "Action": [
+                            "kms:Decrypt",
+                            "kms:DescribeKey",
+                            "kms:Encrypt",
+                            "kms:ReEncrypt*",
+                            "kms:GenerateDataKey*"
+                          ],
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": "*"
+                          },
+                          "Resource": "*",
+                          "Condition": {
+                            "StringEquals": {
+                              "kms:CallerAccount": {
+                                "Ref": "AWS::AccountId"
+                              },
+                              "kms:ViaService": [
+                                {
+                                  "Fn::Sub": "s3.${AWS::Region}.amazonaws.com"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        {
+                          "Action": [
+                            "kms:Decrypt",
+                            "kms:DescribeKey",
+                            "kms:Encrypt",
+                            "kms:ReEncrypt*",
+                            "kms:GenerateDataKey*"
+                          ],
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Sub": "${FilePublishingRole.Arn}"
+                            }
+                          },
+                          "Resource": "*"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_kms.CfnKey",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "FileAssetsBucketEncryptionKeyAlias": {
+                "id": "FileAssetsBucketEncryptionKeyAlias",
+                "path": "CDKToolkit/CDKToolkit/FileAssetsBucketEncryptionKeyAlias",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::KMS::Alias",
+                  "aws:cdk:cloudformation:props": {
+                    "aliasName": {
+                      "Fn::Sub": "alias/cdk-${Qualifier}-assets-key"
+                    },
+                    "targetKeyId": {
+                      "Ref": "FileAssetsBucketEncryptionKey"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_kms.CfnAlias",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "StagingBucket": {
+                "id": "StagingBucket",
+                "path": "CDKToolkit/CDKToolkit/StagingBucket",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "accessControl": "Private",
+                    "bucketEncryption": {
+                      "serverSideEncryptionConfiguration": [
+                        {
+                          "serverSideEncryptionByDefault": {
+                            "kmsMasterKeyId": {
+                              "Fn::If": [
+                                "CreateNewKey",
+                                {
+                                  "Fn::Sub": "${FileAssetsBucketEncryptionKey.Arn}"
+                                },
+                                {
+                                  "Fn::If": [
+                                    "UseAwsManagedKey",
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    },
+                                    {
+                                      "Fn::Sub": "${FileAssetsBucketKmsKeyId}"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "sseAlgorithm": "aws:kms"
+                          }
+                        }
+                      ]
+                    },
+                    "bucketName": {
+                      "Fn::If": [
+                        "HasCustomFileAssetsBucketName",
+                        {
+                          "Fn::Sub": "${FileAssetsBucketName}"
+                        },
+                        {
+                          "Fn::Sub": "cdk-${Qualifier}-assets-${AWS::AccountId}-${AWS::Region}"
+                        }
+                      ]
+                    },
+                    "publicAccessBlockConfiguration": {
+                      "Fn::If": [
+                        "UsePublicAccessBlockConfiguration",
+                        {
+                          "BlockPublicAcls": true,
+                          "BlockPublicPolicy": true,
+                          "IgnorePublicAcls": true,
+                          "RestrictPublicBuckets": true
+                        },
+                        {
+                          "Ref": "AWS::NoValue"
+                        }
+                      ]
+                    },
+                    "versioningConfiguration": {
+                      "status": "Enabled"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "StagingBucketPolicy": {
+                "id": "StagingBucketPolicy",
+                "path": "CDKToolkit/CDKToolkit/StagingBucketPolicy",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                  "aws:cdk:cloudformation:props": {
+                    "bucket": {
+                      "Ref": "StagingBucket"
+                    },
+                    "policyDocument": {
+                      "Id": "AccessControl",
+                      "Version": "2012-10-17",
+                      "Statement": [
+                        {
+                          "Sid": "AllowSSLRequestsOnly",
+                          "Action": "s3:*",
+                          "Effect": "Deny",
+                          "Resource": [
+                            {
+                              "Fn::Sub": "${StagingBucket.Arn}"
+                            },
+                            {
+                              "Fn::Sub": "${StagingBucket.Arn}/*"
+                            }
+                          ],
+                          "Condition": {
+                            "Bool": {
+                              "aws:SecureTransport": "false"
+                            }
+                          },
+                          "Principal": "*"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "ContainerAssetsRepository": {
+                "id": "ContainerAssetsRepository",
+                "path": "CDKToolkit/CDKToolkit/ContainerAssetsRepository",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECR::Repository",
+                  "aws:cdk:cloudformation:props": {
+                    "repositoryName": {
+                      "Fn::If": [
+                        "HasCustomContainerAssetsRepositoryName",
+                        {
+                          "Fn::Sub": "${ContainerAssetsRepositoryName}"
+                        },
+                        {
+                          "Fn::Sub": "cdk-${Qualifier}-container-assets-${AWS::AccountId}-${AWS::Region}"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecr.CfnRepository",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "ImagePublishingRole": {
+                "id": "ImagePublishingRole",
+                "path": "CDKToolkit/CDKToolkit/ImagePublishingRole",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::111111111111:root"
+                                  ]
+                                ]
+                              },
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::",
+                                    {
+                                      "Fn::Sub": "${AWS::AccountId}"
+                                    },
+                                    ":root"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::222222222222:root"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "roleName": {
+                      "Fn::Sub": "cdk-${Qualifier}-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
+                    },
+                    "tags": [
+                      {
+                        "key": "aws-cdk:bootstrap-role",
+                        "value": "image-publishing"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "LookupRole": {
+                "id": "LookupRole",
+                "path": "CDKToolkit/CDKToolkit/LookupRole",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Ref": "AWS::AccountId"
+                            }
+                          }
+                        },
+                        {
+                          "Fn::If": [
+                            "HasTrustedAccountsForLookup",
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "AWS": []
+                              }
+                            },
+                            {
+                              "Ref": "AWS::NoValue"
+                            }
+                          ]
+                        },
+                        {
+                          "Fn::If": [
+                            "HasTrustedAccounts",
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "AWS": [
+                                  "111111111111"
+                                ]
+                              }
+                            },
+                            {
+                              "Ref": "AWS::NoValue"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/ReadOnlyAccess"
+                      }
+                    ],
+                    "policies": [
+                      {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Sid": "DontReadSecrets",
+                              "Effect": "Deny",
+                              "Action": [
+                                "kms:Decrypt"
+                              ],
+                              "Resource": "*"
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "LookupRolePolicy"
+                      }
+                    ],
+                    "roleName": {
+                      "Fn::Sub": "cdk-${Qualifier}-lookup-role-${AWS::AccountId}-${AWS::Region}"
+                    },
+                    "tags": [
+                      {
+                        "key": "aws-cdk:bootstrap-role",
+                        "value": "lookup"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "FilePublishingRoleDefaultPolicy": {
+                "id": "FilePublishingRoleDefaultPolicy",
+                "path": "CDKToolkit/CDKToolkit/FilePublishingRoleDefaultPolicy",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "s3:GetObject*",
+                            "s3:GetBucket*",
+                            "s3:List*",
+                            "s3:DeleteObject*",
+                            "s3:PutObject*",
+                            "s3:Abort*"
+                          ],
+                          "Resource": [
+                            {
+                              "Fn::Sub": "${StagingBucket.Arn}"
+                            },
+                            {
+                              "Fn::Sub": "${StagingBucket.Arn}/*"
+                            }
+                          ],
+                          "Effect": "Allow"
+                        },
+                        {
+                          "Action": [
+                            "kms:Decrypt",
+                            "kms:DescribeKey",
+                            "kms:Encrypt",
+                            "kms:ReEncrypt*",
+                            "kms:GenerateDataKey*"
+                          ],
+                          "Effect": "Allow",
+                          "Resource": {
+                            "Fn::If": [
+                              "CreateNewKey",
+                              {
+                                "Fn::Sub": "${FileAssetsBucketEncryptionKey.Arn}"
+                              },
+                              {
+                                "Fn::Sub": "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${FileAssetsBucketKmsKeyId}"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": {
+                      "Fn::Sub": "cdk-${Qualifier}-file-publishing-role-default-policy-${AWS::AccountId}-${AWS::Region}"
+                    },
+                    "roles": [
+                      {
+                        "Ref": "FilePublishingRole"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "ImagePublishingRoleDefaultPolicy": {
+                "id": "ImagePublishingRoleDefaultPolicy",
+                "path": "CDKToolkit/CDKToolkit/ImagePublishingRoleDefaultPolicy",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "ecr:PutImage",
+                            "ecr:InitiateLayerUpload",
+                            "ecr:UploadLayerPart",
+                            "ecr:CompleteLayerUpload",
+                            "ecr:BatchCheckLayerAvailability",
+                            "ecr:DescribeRepositories",
+                            "ecr:DescribeImages",
+                            "ecr:BatchGetImage",
+                            "ecr:GetDownloadUrlForLayer"
+                          ],
+                          "Resource": {
+                            "Fn::Sub": "${ContainerAssetsRepository.Arn}"
+                          },
+                          "Effect": "Allow"
+                        },
+                        {
+                          "Action": [
+                            "ecr:GetAuthorizationToken"
+                          ],
+                          "Resource": "*",
+                          "Effect": "Allow"
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": {
+                      "Fn::Sub": "cdk-${Qualifier}-image-publishing-role-default-policy-${AWS::AccountId}-${AWS::Region}"
+                    },
+                    "roles": [
+                      {
+                        "Ref": "ImagePublishingRole"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "CloudFormationExecutionRole": {
+                "id": "CloudFormationExecutionRole",
+                "path": "CDKToolkit/CDKToolkit/CloudFormationExecutionRole",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "cloudformation.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": {
+                      "Fn::If": [
+                        "HasCloudFormationExecutionPolicies",
+                        [
+                          "arn:aws:iam::aws:policy/AdministratorAccess"
+                        ],
+                        {
+                          "Fn::If": [
+                            "HasTrustedAccounts",
+                            {
+                              "Ref": "AWS::NoValue"
+                            },
+                            [
+                              {
+                                "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/AdministratorAccess"
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    },
+                    "roleName": {
+                      "Fn::Sub": "cdk-${Qualifier}-cfn-exec-role-${AWS::AccountId}-${AWS::Region}"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "CdkBootstrapVersion": {
+                "id": "CdkBootstrapVersion",
+                "path": "CDKToolkit/CDKToolkit/CdkBootstrapVersion",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                  "aws:cdk:cloudformation:props": {
+                    "type": "String",
+                    "value": "8",
+                    "name": {
+                      "Fn::Sub": "/cdk-bootstrap/${Qualifier}/version"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "DeploymentActionRole": {
+                "id": "DeploymentActionRole",
+                "path": "CDKToolkit/CDKToolkit/DeploymentActionRole",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::111111111111:root"
+                                  ]
+                                ]
+                              },
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::",
+                                    {
+                                      "Fn::Sub": "${AWS::AccountId}"
+                                    },
+                                    ":root"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::222222222222:root"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policies": [
+                      {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Sid": "CloudFormationPermissions",
+                              "Effect": "Allow",
+                              "Action": [
+                                "cloudformation:CreateChangeSet",
+                                "cloudformation:DeleteChangeSet",
+                                "cloudformation:DescribeChangeSet",
+                                "cloudformation:DescribeStacks",
+                                "cloudformation:ExecuteChangeSet",
+                                "cloudformation:CreateStack",
+                                "cloudformation:UpdateStack"
+                              ],
+                              "Resource": "*"
+                            },
+                            {
+                              "Sid": "PipelineCrossAccountArtifactsBucket",
+                              "Effect": "Allow",
+                              "Action": [
+                                "s3:GetObject*",
+                                "s3:GetBucket*",
+                                "s3:List*",
+                                "s3:Abort*",
+                                "s3:DeleteObject*",
+                                "s3:PutObject*"
+                              ],
+                              "Resource": "*",
+                              "Condition": {
+                                "StringNotEquals": {
+                                  "s3:ResourceAccount": {
+                                    "Ref": "AWS::AccountId"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "Sid": "PipelineCrossAccountArtifactsKey",
+                              "Effect": "Allow",
+                              "Action": [
+                                "kms:Decrypt",
+                                "kms:DescribeKey",
+                                "kms:Encrypt",
+                                "kms:ReEncrypt*",
+                                "kms:GenerateDataKey*"
+                              ],
+                              "Resource": "*",
+                              "Condition": {
+                                "StringEquals": {
+                                  "kms:ViaService": {
+                                    "Fn::Sub": "s3.${AWS::Region}.amazonaws.com"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "Action": "iam:PassRole",
+                              "Resource": {
+                                "Fn::Sub": "${CloudFormationExecutionRole.Arn}"
+                              },
+                              "Effect": "Allow"
+                            },
+                            {
+                              "Sid": "CliPermissions",
+                              "Action": [
+                                "cloudformation:DescribeStackEvents",
+                                "cloudformation:GetTemplate",
+                                "cloudformation:DeleteStack",
+                                "cloudformation:UpdateTerminationProtection",
+                                "sts:GetCallerIdentity"
+                              ],
+                              "Resource": "*",
+                              "Effect": "Allow"
+                            },
+                            {
+                              "Sid": "CliStagingBucket",
+                              "Effect": "Allow",
+                              "Action": [
+                                "s3:GetObject*",
+                                "s3:GetBucket*",
+                                "s3:List*"
+                              ],
+                              "Resource": [
+                                {
+                                  "Fn::Sub": "${StagingBucket.Arn}"
+                                },
+                                {
+                                  "Fn::Sub": "${StagingBucket.Arn}/*"
+                                }
+                              ]
+                            },
+                            {
+                              "Sid": "ReadVersion",
+                              "Effect": "Allow",
+                              "Action": [
+                                "ssm:GetParameter"
+                              ],
+                              "Resource": [
+                                {
+                                  "Fn::Sub": "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${CdkBootstrapVersion}"
+                                }
+                              ]
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "default"
+                      }
+                    ],
+                    "roleName": {
+                      "Fn::Sub": "cdk-${Qualifier}-deploy-role-${AWS::AccountId}-${AWS::Region}"
+                    },
+                    "tags": [
+                      {
+                        "key": "aws-cdk:bootstrap-role",
+                        "value": "deploy"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.0.0-rc.14"
+                }
+              },
+              "$Hooks": {
+                "id": "$Hooks",
+                "path": "CDKToolkit/CDKToolkit/$Hooks",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "$Ouputs": {
+                "id": "$Ouputs",
+                "path": "CDKToolkit/CDKToolkit/$Ouputs",
+                "children": {
+                  "BucketName": {
+                    "id": "BucketName",
+                    "path": "CDKToolkit/CDKToolkit/$Ouputs/BucketName",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "BucketDomainName": {
+                    "id": "BucketDomainName",
+                    "path": "CDKToolkit/CDKToolkit/$Ouputs/BucketDomainName",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "FileAssetKeyArn": {
+                    "id": "FileAssetKeyArn",
+                    "path": "CDKToolkit/CDKToolkit/$Ouputs/FileAssetKeyArn",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "ImageRepositoryName": {
+                    "id": "ImageRepositoryName",
+                    "path": "CDKToolkit/CDKToolkit/$Ouputs/ImageRepositoryName",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.0.0-rc.14"
+                    }
+                  },
+                  "BootstrapVersion": {
+                    "id": "BootstrapVersion",
+                    "path": "CDKToolkit/CDKToolkit/$Ouputs/BootstrapVersion",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.0.0-rc.14"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.cloudformation_include.CfnInclude",
+              "version": "2.0.0-rc.14"
+            }
+          },
+          "SomeOtherRole": {
+            "id": "SomeOtherRole",
+            "path": "CDKToolkit/SomeOtherRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CDKToolkit/SomeOtherRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Condition": {
+                            "StringEquals": {
+                              "sts:ExternalId": "some-external-id"
+                            }
+                          },
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::222222222222:root"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policies": [
+                      {
+                        "policyName": {
+                          "Fn::Sub": "cdk-${Qualifier}-some-other-default-policy-${AWS::AccountId}-${AWS::Region}"
+                        },
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Resource": [
+                                {
+                                  "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/*-deploy-role-*"
+                                },
+                                {
+                                  "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/*-publishing-role-*"
+                                }
+                              ]
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    ],
+                    "roleName": {
+                      "Fn::Sub": "cdk-${Qualifier}-some-other-role-${AWS::AccountId}-${AWS::Region}"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.0.0-rc.14"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Role",
+              "version": "2.0.0-rc.14"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CDKToolkit/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CDKToolkit/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.0.0-rc.14"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.5"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.0.0-rc.14"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.0.0-rc.14"
+    }
+  }
+}
