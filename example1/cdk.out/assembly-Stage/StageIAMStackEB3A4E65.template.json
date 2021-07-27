@@ -1,0 +1,56 @@
+{
+  "Resources": {
+    "InstanceRole3CCE2F1D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Stage/IAMStack/InstanceRole/Resource"
+      }
+    },
+    "InstanceProfile": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "InstanceRole3CCE2F1D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Stage/IAMStack/InstanceProfile"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAAzWLywrCMBBFv6X7dGqw4lboyp3ELwjTKUwfGcgkugj5d62P1YF77rFg7QkOzcU/tcVx6QpKJCj35HExjlRyRDKDBE0xYzLDFP5rNXvEfoPiZKWP+vH6vvuAdIsy8Uq1miAjwazdw/Zgz3BsZmVuYw6JNwL35QthRdfcjgAAAA=="
+      },
+      "Metadata": {
+        "aws:cdk:path": "Stage/IAMStack/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "ExportsOutputRefInstanceProfileB20CF27C": {
+      "Value": {
+        "Ref": "InstanceProfile"
+      },
+      "Export": {
+        "Name": "Stage-IAMStack:ExportsOutputRefInstanceProfileB20CF27C"
+      }
+    }
+  }
+}

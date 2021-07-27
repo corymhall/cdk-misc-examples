@@ -1,0 +1,50 @@
+{
+  "Resources": {
+    "MyInstanceA12EC128": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "us-east-1a",
+        "IamInstanceProfile": {
+          "Fn::ImportValue": "Stage-IAMStack:ExportsOutputRefInstanceProfileB20CF27C"
+        },
+        "ImageId": {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+        },
+        "InstanceType": "c5.small",
+        "SecurityGroupIds": [
+          {
+            "Fn::ImportValue": "Stage-SgStack:ExportsOutputFnGetAttSgD4954771GroupId89BEBF03"
+          }
+        ],
+        "SubnetId": "abc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Stage/InstanceStack/MyInstance"
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": "#!/bin/bash"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Stage/InstanceStack/MyInstance/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAAzWMvQrDMAyEnyW7otT9oWshU7eQPoFQVHBCZJDtdjB+9zaETHfcd3cOnbvhqXnQN7Y8LV3hYILllYgXGCWGbCzQv3Ugo1WSGPRBY7LMaYuPSoXtQfiM5fnHpPvq8LWChklwjt3HXdHd8dLM0fvWsia/Co67/gDd2I4RkAAAAA=="
+      },
+      "Metadata": {
+        "aws:cdk:path": "Stage/InstanceStack/CDKMetadata/Default"
+      }
+    }
+  },
+  "Parameters": {
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2"
+    }
+  }
+}

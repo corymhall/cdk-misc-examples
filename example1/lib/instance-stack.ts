@@ -6,6 +6,7 @@ export interface InstanceStackProps extends cdk.StackProps {
   role: iam.IRole;
   securityGroup: ec2.ISecurityGroup;
   profile: iam.CfnInstanceProfile;
+  instanceSize: ec2.InstanceSize;
 }
 
 export class InstanceStack extends cdk.Stack {
@@ -19,7 +20,7 @@ export class InstanceStack extends cdk.Stack {
     });
 
     const instance = new ec2.Instance(this, 'MyInstance', {
-      instanceType: ec2.InstanceType.of(ec2.InstanceClass.C5, ec2.InstanceSize.LARGE),
+      instanceType: ec2.InstanceType.of(ec2.InstanceClass.C5, props.instanceSize),
       machineImage: ec2.MachineImage.latestAmazonLinux(),
       vpc,
       role: props.role,

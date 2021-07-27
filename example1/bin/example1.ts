@@ -2,23 +2,30 @@
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import * as ec2 from '@aws-cdk/aws-ec2';
-import { IAMStack } from '../lib/iam-stack';
-import { InstanceStack } from '../lib/instance-stack';
-import { SGStack } from '../lib/sg-stack';
+import { AppStage } from '../lib/stage';
 
 const app = new cdk.App();
 
-const iamStack = new IAMStack(app, 'IAMStack', {
-  synthesizer: new cdk.BootstraplessSynthesizer({}),
+new AppStage(app, 'Dev', {
+  instanceSize: ec2.InstanceSize.SMALL,
+  env: {
+    account: '111111111111',
+    region: 'us-east-1',
+  }
 });
 
-const sgStack = new SGStack(app, 'SgStack', {
-  synthesizer: new cdk.BootstraplessSynthesizer({}),
+new AppStage(app, 'Stage', {
+  instanceSize: ec2.InstanceSize.SMALL,
+  env: {
+    account: '222222222222',
+    region: 'us-east-1',
+  }
 });
 
-new InstanceStack(app, 'InstanceStack', {
-  profile: iamStack.instanceProfile,
-  role: iamStack.role,
-  securityGroup: sgStack.sg,
-  synthesizer: new cdk.BootstraplessSynthesizer({}),
+new AppStage(app, 'Prod', {
+  instanceSize: ec2.InstanceSize.LARGE,
+  env: {
+    account: '333333333333',
+    region: 'us-east-1',
+  }
 });

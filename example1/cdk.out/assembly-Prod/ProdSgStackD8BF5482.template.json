@@ -1,0 +1,43 @@
+{
+  "Resources": {
+    "SgD4954771": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Prod/SgStack/Sg",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": "abcd"
+      },
+      "Metadata": {
+        "aws:cdk:path": "Prod/SgStack/Sg/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAA1WLuwrCQBAAvyX9ZuP5wFZIYR+/IGxWuATvZB9KCPfvMYiF1cAwEzCEE+6qS//WmoapWSgL43KzniboWLMLMbQ5qYmTQXtPP1tgm5j2n5zJJdp8lezPrfkTpUDKA+OozSscMZzxUI0aYy2eLD4Yuy9XyjiSzI0AAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "Prod/SgStack/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "ExportsOutputFnGetAttSgD4954771GroupId89BEBF03": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SgD4954771",
+          "GroupId"
+        ]
+      },
+      "Export": {
+        "Name": "Prod-SgStack:ExportsOutputFnGetAttSgD4954771GroupId89BEBF03"
+      }
+    }
+  }
+}

@@ -12,364 +12,1014 @@
           "version": "1.115.0"
         }
       },
-      "IAMStack": {
-        "id": "IAMStack",
-        "path": "IAMStack",
+      "Dev": {
+        "id": "Dev",
+        "path": "Dev",
         "children": {
-          "InstanceRole": {
-            "id": "InstanceRole",
-            "path": "IAMStack/InstanceRole",
+          "IAMStack": {
+            "id": "IAMStack",
+            "path": "Dev/IAMStack",
             "children": {
-              "Resource": {
-                "id": "Resource",
-                "path": "IAMStack/InstanceRole/Resource",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                  "aws:cdk:cloudformation:props": {
-                    "assumeRolePolicyDocument": {
-                      "Statement": [
-                        {
-                          "Action": "sts:AssumeRole",
-                          "Effect": "Allow",
-                          "Principal": {
-                            "Service": {
-                              "Fn::Join": [
-                                "",
-                                [
-                                  "ec2.",
-                                  {
-                                    "Ref": "AWS::URLSuffix"
-                                  }
-                                ]
-                              ]
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "Dev/IAMStack/InstanceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Dev/IAMStack/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
                             }
-                          }
+                          ],
+                          "Version": "2012-10-17"
                         }
-                      ],
-                      "Version": "2012-10-17"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.115.0"
                     }
                   }
                 },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-iam.CfnRole",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/aws-iam.Role",
-              "version": "1.115.0"
-            }
-          },
-          "ImmutableRoleInstanceRole": {
-            "id": "ImmutableRoleInstanceRole",
-            "path": "IAMStack/ImmutableRoleInstanceRole",
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Resource",
-              "version": "1.115.0"
-            }
-          },
-          "InstanceProfile": {
-            "id": "InstanceProfile",
-            "path": "IAMStack/InstanceProfile",
-            "attributes": {
-              "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
-              "aws:cdk:cloudformation:props": {
-                "roles": [
-                  {
-                    "Ref": "InstanceRole3CCE2F1D"
-                  }
-                ]
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/aws-iam.CfnInstanceProfile",
-              "version": "1.115.0"
-            }
-          },
-          "CDKMetadata": {
-            "id": "CDKMetadata",
-            "path": "IAMStack/CDKMetadata",
-            "children": {
-              "Default": {
-                "id": "Default",
-                "path": "IAMStack/CDKMetadata/Default",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnResource",
+                  "fqn": "@aws-cdk/aws-iam.Role",
                   "version": "1.115.0"
                 }
               },
-              "Condition": {
-                "id": "Condition",
-                "path": "IAMStack/CDKMetadata/Condition",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnCondition",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
-              "version": "1.115.0"
-            }
-          },
-          "Exports": {
-            "id": "Exports",
-            "path": "IAMStack/Exports",
-            "children": {
-              "Output{\"Ref\":\"InstanceProfile\"}": {
-                "id": "Output{\"Ref\":\"InstanceProfile\"}",
-                "path": "IAMStack/Exports/Output{\"Ref\":\"InstanceProfile\"}",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnOutput",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
-              "version": "1.115.0"
-            }
-          }
-        },
-        "constructInfo": {
-          "fqn": "@aws-cdk/core.Stack",
-          "version": "1.115.0"
-        }
-      },
-      "SgStack": {
-        "id": "SgStack",
-        "path": "SgStack",
-        "children": {
-          "Vpc": {
-            "id": "Vpc",
-            "path": "SgStack/Vpc",
-            "children": {
-              "PublicSubnet1": {
-                "id": "PublicSubnet1",
-                "path": "SgStack/Vpc/PublicSubnet1",
+              "ImmutableRoleInstanceRole": {
+                "id": "ImmutableRoleInstanceRole",
+                "path": "Dev/IAMStack/ImmutableRoleInstanceRole",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Resource",
                   "version": "1.115.0"
                 }
               },
-              "PublicSubnet2": {
-                "id": "PublicSubnet2",
-                "path": "SgStack/Vpc/PublicSubnet2",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.Resource",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Resource",
-              "version": "1.115.0"
-            }
-          },
-          "Sg": {
-            "id": "Sg",
-            "path": "SgStack/Sg",
-            "children": {
-              "Resource": {
-                "id": "Resource",
-                "path": "SgStack/Sg/Resource",
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Dev/IAMStack/InstanceProfile",
                 "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
                   "aws:cdk:cloudformation:props": {
-                    "groupDescription": "SgStack/Sg",
-                    "securityGroupEgress": [
+                    "roles": [
                       {
-                        "cidrIp": "0.0.0.0/0",
-                        "description": "Allow all outbound traffic by default",
-                        "ipProtocol": "-1"
+                        "Ref": "InstanceRole3CCE2F1D"
                       }
-                    ],
-                    "vpcId": "abcd"
+                    ]
                   }
                 },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
-              "version": "1.115.0"
-            }
-          },
-          "CDKMetadata": {
-            "id": "CDKMetadata",
-            "path": "SgStack/CDKMetadata",
-            "children": {
-              "Default": {
-                "id": "Default",
-                "path": "SgStack/CDKMetadata/Default",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnResource",
+                  "fqn": "@aws-cdk/aws-iam.CfnInstanceProfile",
                   "version": "1.115.0"
                 }
               },
-              "Condition": {
-                "id": "Condition",
-                "path": "SgStack/CDKMetadata/Condition",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnCondition",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
-              "version": "1.115.0"
-            }
-          },
-          "Exports": {
-            "id": "Exports",
-            "path": "SgStack/Exports",
-            "children": {
-              "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}": {
-                "id": "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
-                "path": "SgStack/Exports/Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnOutput",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
-              "version": "1.115.0"
-            }
-          }
-        },
-        "constructInfo": {
-          "fqn": "@aws-cdk/core.Stack",
-          "version": "1.115.0"
-        }
-      },
-      "InstanceStack": {
-        "id": "InstanceStack",
-        "path": "InstanceStack",
-        "children": {
-          "Vpc": {
-            "id": "Vpc",
-            "path": "InstanceStack/Vpc",
-            "children": {
-              "PublicSubnet1": {
-                "id": "PublicSubnet1",
-                "path": "InstanceStack/Vpc/PublicSubnet1",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.Resource",
-                  "version": "1.115.0"
-                }
-              },
-              "PublicSubnet2": {
-                "id": "PublicSubnet2",
-                "path": "InstanceStack/Vpc/PublicSubnet2",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.Resource",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Resource",
-              "version": "1.115.0"
-            }
-          },
-          "MyInstance": {
-            "id": "MyInstance",
-            "path": "InstanceStack/MyInstance",
-            "children": {
-              "Resource": {
-                "id": "Resource",
-                "path": "InstanceStack/MyInstance/Resource",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
-                  "aws:cdk:cloudformation:props": {
-                    "availabilityZone": "us-east-1a",
-                    "iamInstanceProfile": {
-                      "Fn::ImportValue": "IAMStack:ExportsOutputRefInstanceProfileB20CF27C"
-                    },
-                    "imageId": {
-                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
-                    },
-                    "instanceType": "c5.large",
-                    "securityGroupIds": [
-                      {
-                        "Fn::ImportValue": "SgStack:ExportsOutputFnGetAttSgD4954771GroupId89BEBF03"
-                      }
-                    ],
-                    "subnetId": "abc",
-                    "tags": [
-                      {
-                        "key": "Name",
-                        "value": "InstanceStack/MyInstance"
-                      }
-                    ],
-                    "userData": {
-                      "Fn::Base64": "#!/bin/bash"
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Dev/IAMStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Dev/IAMStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
                     }
                   }
                 },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-ec2.CfnInstance",
-                  "version": "1.115.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/aws-ec2.Instance",
-              "version": "1.115.0"
-            }
-          },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "path": "InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.CfnParameter",
-              "version": "1.115.0"
-            }
-          },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "path": "InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Resource",
-              "version": "1.115.0"
-            }
-          },
-          "CDKMetadata": {
-            "id": "CDKMetadata",
-            "path": "InstanceStack/CDKMetadata",
-            "children": {
-              "Default": {
-                "id": "Default",
-                "path": "InstanceStack/CDKMetadata/Default",
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnResource",
+                  "fqn": "@aws-cdk/core.Construct",
                   "version": "1.115.0"
                 }
               },
-              "Condition": {
-                "id": "Condition",
-                "path": "InstanceStack/CDKMetadata/Condition",
+              "Exports": {
+                "id": "Exports",
+                "path": "Dev/IAMStack/Exports",
+                "children": {
+                  "Output{\"Ref\":\"InstanceProfile\"}": {
+                    "id": "Output{\"Ref\":\"InstanceProfile\"}",
+                    "path": "Dev/IAMStack/Exports/Output{\"Ref\":\"InstanceProfile\"}",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "fqn": "@aws-cdk/core.Construct",
                   "version": "1.115.0"
                 }
               }
             },
             "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          },
+          "SgStack": {
+            "id": "SgStack",
+            "path": "Dev/SgStack",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "Dev/SgStack/Vpc",
+                "children": {
+                  "PublicSubnet1": {
+                    "id": "PublicSubnet1",
+                    "path": "Dev/SgStack/Vpc/PublicSubnet1",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  },
+                  "PublicSubnet2": {
+                    "id": "PublicSubnet2",
+                    "path": "Dev/SgStack/Vpc/PublicSubnet2",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "Sg": {
+                "id": "Sg",
+                "path": "Dev/SgStack/Sg",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Dev/SgStack/Sg/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Dev/SgStack/Sg",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": "abcd"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Dev/SgStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Dev/SgStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "Dev/SgStack/Exports",
+                "children": {
+                  "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
+                    "path": "Dev/SgStack/Exports/Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          },
+          "InstanceStack": {
+            "id": "InstanceStack",
+            "path": "Dev/InstanceStack",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "Dev/InstanceStack/Vpc",
+                "children": {
+                  "PublicSubnet1": {
+                    "id": "PublicSubnet1",
+                    "path": "Dev/InstanceStack/Vpc/PublicSubnet1",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  },
+                  "PublicSubnet2": {
+                    "id": "PublicSubnet2",
+                    "path": "Dev/InstanceStack/Vpc/PublicSubnet2",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "MyInstance": {
+                "id": "MyInstance",
+                "path": "Dev/InstanceStack/MyInstance",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Dev/InstanceStack/MyInstance/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                      "aws:cdk:cloudformation:props": {
+                        "availabilityZone": "us-east-1a",
+                        "iamInstanceProfile": {
+                          "Fn::ImportValue": "Dev-IAMStack:ExportsOutputRefInstanceProfileB20CF27C"
+                        },
+                        "imageId": {
+                          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                        },
+                        "instanceType": "c5.small",
+                        "securityGroupIds": [
+                          {
+                            "Fn::ImportValue": "Dev-SgStack:ExportsOutputFnGetAttSgD4954771GroupId89BEBF03"
+                          }
+                        ],
+                        "subnetId": "abc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Dev/InstanceStack/MyInstance"
+                          }
+                        ],
+                        "userData": {
+                          "Fn::Base64": "#!/bin/bash"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnInstance",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.Instance",
+                  "version": "1.115.0"
+                }
+              },
+              "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+                "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+                "path": "Dev/InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnParameter",
+                  "version": "1.115.0"
+                }
+              },
+              "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+                "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+                "path": "Dev/InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Dev/InstanceStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Dev/InstanceStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
               "version": "1.115.0"
             }
           }
         },
         "constructInfo": {
-          "fqn": "@aws-cdk/core.Stack",
+          "fqn": "@aws-cdk/core.Stage",
+          "version": "1.115.0"
+        }
+      },
+      "Stage": {
+        "id": "Stage",
+        "path": "Stage",
+        "children": {
+          "IAMStack": {
+            "id": "IAMStack",
+            "path": "Stage/IAMStack",
+            "children": {
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "Stage/IAMStack/InstanceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Stage/IAMStack/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.115.0"
+                }
+              },
+              "ImmutableRoleInstanceRole": {
+                "id": "ImmutableRoleInstanceRole",
+                "path": "Stage/IAMStack/ImmutableRoleInstanceRole",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Stage/IAMStack/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "InstanceRole3CCE2F1D"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.CfnInstanceProfile",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Stage/IAMStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Stage/IAMStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "Stage/IAMStack/Exports",
+                "children": {
+                  "Output{\"Ref\":\"InstanceProfile\"}": {
+                    "id": "Output{\"Ref\":\"InstanceProfile\"}",
+                    "path": "Stage/IAMStack/Exports/Output{\"Ref\":\"InstanceProfile\"}",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          },
+          "SgStack": {
+            "id": "SgStack",
+            "path": "Stage/SgStack",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "Stage/SgStack/Vpc",
+                "children": {
+                  "PublicSubnet1": {
+                    "id": "PublicSubnet1",
+                    "path": "Stage/SgStack/Vpc/PublicSubnet1",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  },
+                  "PublicSubnet2": {
+                    "id": "PublicSubnet2",
+                    "path": "Stage/SgStack/Vpc/PublicSubnet2",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "Sg": {
+                "id": "Sg",
+                "path": "Stage/SgStack/Sg",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Stage/SgStack/Sg/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Stage/SgStack/Sg",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": "abcd"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Stage/SgStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Stage/SgStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "Stage/SgStack/Exports",
+                "children": {
+                  "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
+                    "path": "Stage/SgStack/Exports/Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          },
+          "InstanceStack": {
+            "id": "InstanceStack",
+            "path": "Stage/InstanceStack",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "Stage/InstanceStack/Vpc",
+                "children": {
+                  "PublicSubnet1": {
+                    "id": "PublicSubnet1",
+                    "path": "Stage/InstanceStack/Vpc/PublicSubnet1",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  },
+                  "PublicSubnet2": {
+                    "id": "PublicSubnet2",
+                    "path": "Stage/InstanceStack/Vpc/PublicSubnet2",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "MyInstance": {
+                "id": "MyInstance",
+                "path": "Stage/InstanceStack/MyInstance",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Stage/InstanceStack/MyInstance/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                      "aws:cdk:cloudformation:props": {
+                        "availabilityZone": "us-east-1a",
+                        "iamInstanceProfile": {
+                          "Fn::ImportValue": "Stage-IAMStack:ExportsOutputRefInstanceProfileB20CF27C"
+                        },
+                        "imageId": {
+                          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                        },
+                        "instanceType": "c5.small",
+                        "securityGroupIds": [
+                          {
+                            "Fn::ImportValue": "Stage-SgStack:ExportsOutputFnGetAttSgD4954771GroupId89BEBF03"
+                          }
+                        ],
+                        "subnetId": "abc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Stage/InstanceStack/MyInstance"
+                          }
+                        ],
+                        "userData": {
+                          "Fn::Base64": "#!/bin/bash"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnInstance",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.Instance",
+                  "version": "1.115.0"
+                }
+              },
+              "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+                "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+                "path": "Stage/InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnParameter",
+                  "version": "1.115.0"
+                }
+              },
+              "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+                "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+                "path": "Stage/InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Stage/InstanceStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Stage/InstanceStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stage",
+          "version": "1.115.0"
+        }
+      },
+      "Prod": {
+        "id": "Prod",
+        "path": "Prod",
+        "children": {
+          "IAMStack": {
+            "id": "IAMStack",
+            "path": "Prod/IAMStack",
+            "children": {
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "Prod/IAMStack/InstanceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Prod/IAMStack/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.115.0"
+                }
+              },
+              "ImmutableRoleInstanceRole": {
+                "id": "ImmutableRoleInstanceRole",
+                "path": "Prod/IAMStack/ImmutableRoleInstanceRole",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Prod/IAMStack/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "InstanceRole3CCE2F1D"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.CfnInstanceProfile",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Prod/IAMStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Prod/IAMStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "Prod/IAMStack/Exports",
+                "children": {
+                  "Output{\"Ref\":\"InstanceProfile\"}": {
+                    "id": "Output{\"Ref\":\"InstanceProfile\"}",
+                    "path": "Prod/IAMStack/Exports/Output{\"Ref\":\"InstanceProfile\"}",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          },
+          "SgStack": {
+            "id": "SgStack",
+            "path": "Prod/SgStack",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "Prod/SgStack/Vpc",
+                "children": {
+                  "PublicSubnet1": {
+                    "id": "PublicSubnet1",
+                    "path": "Prod/SgStack/Vpc/PublicSubnet1",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  },
+                  "PublicSubnet2": {
+                    "id": "PublicSubnet2",
+                    "path": "Prod/SgStack/Vpc/PublicSubnet2",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "Sg": {
+                "id": "Sg",
+                "path": "Prod/SgStack/Sg",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Prod/SgStack/Sg/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Prod/SgStack/Sg",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": "abcd"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Prod/SgStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Prod/SgStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "Prod/SgStack/Exports",
+                "children": {
+                  "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
+                    "path": "Prod/SgStack/Exports/Output{\"Fn::GetAtt\":[\"SgD4954771\",\"GroupId\"]}",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          },
+          "InstanceStack": {
+            "id": "InstanceStack",
+            "path": "Prod/InstanceStack",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "Prod/InstanceStack/Vpc",
+                "children": {
+                  "PublicSubnet1": {
+                    "id": "PublicSubnet1",
+                    "path": "Prod/InstanceStack/Vpc/PublicSubnet1",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  },
+                  "PublicSubnet2": {
+                    "id": "PublicSubnet2",
+                    "path": "Prod/InstanceStack/Vpc/PublicSubnet2",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "MyInstance": {
+                "id": "MyInstance",
+                "path": "Prod/InstanceStack/MyInstance",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Prod/InstanceStack/MyInstance/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                      "aws:cdk:cloudformation:props": {
+                        "availabilityZone": "us-east-1a",
+                        "iamInstanceProfile": {
+                          "Fn::ImportValue": "Prod-IAMStack:ExportsOutputRefInstanceProfileB20CF27C"
+                        },
+                        "imageId": {
+                          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                        },
+                        "instanceType": "c5.large",
+                        "securityGroupIds": [
+                          {
+                            "Fn::ImportValue": "Prod-SgStack:ExportsOutputFnGetAttSgD4954771GroupId89BEBF03"
+                          }
+                        ],
+                        "subnetId": "abc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Prod/InstanceStack/MyInstance"
+                          }
+                        ],
+                        "userData": {
+                          "Fn::Base64": "#!/bin/bash"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnInstance",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.Instance",
+                  "version": "1.115.0"
+                }
+              },
+              "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+                "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+                "path": "Prod/InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnParameter",
+                  "version": "1.115.0"
+                }
+              },
+              "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+                "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+                "path": "Prod/InstanceStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.115.0"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "Prod/InstanceStack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "Prod/InstanceStack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnResource",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Stack",
+              "version": "1.115.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stage",
           "version": "1.115.0"
         }
       }
